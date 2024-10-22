@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Segmentations</title>
+    <style>
+        body {
+            background-image: url("https://img.freepik.com/premium-vector/online-world-concept-illustration_86047-635.jpg?w=826");
+            background-color: black;
+        }
+
+        .login {
+            text-align: left;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <center>
+            <h1>Customer Segmentation</h1>
+            <p>Main Input For Main Input Receiving Query</p>
+            <form action="{{ url_for('predict') }}" method="post">
+                <h1>Please enter the following details</h1>
+                <label for="Sex">Sex:</label>
+                <select id="Sex" name="Sex">
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+                <br><br>
+                <label for="Marital status">Marital status:</label>
+                <select id="Marital status" name="Marital status">
+                    <option value="0">Single</option>
+                    <option value="1">Married</option>
+                </select>
+                <br><br>
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" name="Age" min="20" max="80" placeholder="Age required" required />
+                <br><br>
+                <label for="Education">Education:</label>
+                <select id="Education" name="Education">
+                    <option value="0">High School</option>
+                    <option value="1">Bachelor's Degree</option>
+                    <option value="2">Master's Degree</option>
+                    <option value="3">Ph.D.</option>
+                </select>
+                <br><br>
+                <label for="Income">Income:</label>
+                <input type="number" id="Income" name="Income" min="0" placeholder="Income" required />
+                <br><br>
+                <label for="Occupation">Occupation:</label>
+                <select id="Occupation" name="Occupation">
+                    <option value="0">Not Working</option>
+                    <option value="1">Working</option>
+                    <option value="2">Business</option>
+                </select>
+                <br><br>
+                <label for="Settlement size">Settlement size:</label>
+                <select id="Settlement size" name="Settlement size">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+
+                <br> <br><br>
+                <button>predict</button>
+            </form>
+            <br>
+            <br>
+            <br>
+
+            <div>The Customer is :{{predict}}</div>
+        </center>
+
+    </div>
+</body>
+
+</html>
